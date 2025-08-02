@@ -1,0 +1,36 @@
+# Tests
+tests/
+test/
+*.test.js
+*.spec.js
+
+# Development files
+*.sh
+docs/
+.env*
+examples/
+
+# Build artifacts
+coverage/
+.nyc_output/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Documentation
+*.md
+!README.md
+
+# Source control
+.git/
+.gitignore
+
+# Dev dependencies config
+.eslintrc*
+.prettierrc*
