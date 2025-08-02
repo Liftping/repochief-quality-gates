@@ -37,5 +37,8 @@
   },
   "peerDependencies": {
     "@liftping/repochief-core": "^0.1.0"
+  },
+  "repository": {
+    "url": "https://github.com/liftping/repochief-quality-gates.git"
   }
 }
