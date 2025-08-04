@@ -13,7 +13,7 @@
     "test:watch": "mocha tests/**/*.test.js --watch",
     "security:scan": "secretlint \"**/*\" --secretlintrc ../../.secretlintrc.json || true",
     "lint": "eslint src/",
-    "prepublishOnly": "npm pack --dry-run"
+    "prepublishOnly": "npm run lint && npm run test && npm run security:scan && npm pack --dry-run"
   },
   "keywords": [
     "repochief",
@@ -37,8 +37,5 @@
   },
   "peerDependencies": {
     "@liftping/repochief-core": "^0.1.0"
-  },
-  "repository": {
-    "url": "https://github.com/liftping/repochief-quality-gates.git"
   }
 }
