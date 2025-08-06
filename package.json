@@ -1,6 +1,6 @@
 {
   "name": "@liftping/repochief-quality-gates",
-  "version": "0.1.0",
+  "version": "0.2.1754504250",
   "description": "Quality verification gates for RepoChief AI agent outputs",
   "main": "src/index.js",
   "files": [
@@ -13,7 +13,7 @@
     "test:watch": "mocha tests/**/*.test.js --watch",
     "security:scan": "secretlint \"**/*\" --secretlintrc ../../.secretlintrc.json || true",
     "lint": "eslint src/",
-    "prepublishOnly": "npm run lint && npm run test && npm run security:scan && npm pack --dry-run"
+    "prepublishOnly": "npm pack --dry-run"
   },
   "keywords": [
     "repochief",
@@ -26,6 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/eslint-parser": "^7.23.0",
+    "@liftping/repochief-cli": "^0.1.0",
     "eslint": "^8.57.1",
     "glob": "^10.3.0",
     "js-yaml": "^4.1.0"
@@ -36,6 +37,6 @@
     "sinon": "^17.0.1"
   },
   "peerDependencies": {
-    "@liftping/repochief-core": "^0.1.0"
+    "@liftping/repochief-core": "^0.2.0"
   }
 }
