@@ -1,6 +1,8 @@
 /**
  * RepoChief Quality Gates
  * Pluggable verification system for AI-generated code
+ * 
+ * Now with optional cloud storage integration via StorageAdapter
  */
 
 const BaseQualityGate = require('./BaseQualityGate');
@@ -8,6 +10,8 @@ const ESLintGate = require('./gates/ESLintGate');
 const TestRunnerGate = require('./gates/TestRunnerGate');
 const SecurityGate = require('./gates/SecurityGate');
 const ComplexityGate = require('./gates/ComplexityGate');
+const ResultReporter = require('./ResultReporter');
+const QualityRunner = require('./QualityRunner');
 
 // Quality gate registry
 const gateRegistry = new Map();
@@ -62,14 +66,25 @@ function createQualityRunner(options = {}) {
 }
 
 module.exports = {
+    // Core classes
     BaseQualityGate,
     QualityGate: BaseQualityGate, // Alias for consistency
+    ResultReporter,
+    QualityRunner,
+    
+    // Gate implementations
     ESLintGate,
     TestRunnerGate,
     SecurityGate,
     ComplexityGate,
+    
+    // Factory functions
     createGate,
     createQualityRunner,
     registerGate,
-    getGateTypes
+    getGateTypes,
+    
+    // Convenience methods for storage integration
+    createRunnerWithStorage: QualityRunner.createWithGates,
+    createCIRunner: QualityRunner.createForCI
 };
